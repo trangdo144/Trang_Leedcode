@@ -1,8 +1,7 @@
-var maximumNumberOfStringPairs = function (words) {
-  let newWord;
+var similarPairs = function (words) {
   let map = new Map();
   words.forEach((word) => {
-    newWord = word.split("").reverse().sort().join("");
+    newWord = Array.from(new Set(word)).join("");
     if (map.has(newWord)) {
       map.set(newWord, map.get(newWord) + 1);
     } else {
@@ -12,7 +11,9 @@ var maximumNumberOfStringPairs = function (words) {
   let count = 0;
   map.forEach((value, key) => {
     if (value >= 2) {
-      count++;
+      for (let i = 1; i < value; i++) {
+        count = count + i;
+      }
     }
   });
   return count;
