@@ -1,25 +1,20 @@
-var prefixCount = function (words, pref) {
-  //   let newPref = pref.split("");
-  //   let check = true;
-  //   let count = 0;
-  //   words.forEach((word) => {
-  //     let newWord = word.split("");
-  //     for (let i = 0; i < newPref.length; i++) {
-  //       if (newPref[i] != newWord[i]) {
-  //         check = false;
-  //       }
-  //     }
-  //     if (check != false) {
-  //       count++;
-  //     }
-  //   });
-  //   return count;
-
+//leetcode.com/problems/counting-words-with-a-given-prefix/submissions/
+https: var prefixCount = function (words, pref) {
   let count = 0;
   words.forEach((word) => {
-    if (word.split("")[0] == pref.split("")[0] && word.includes(pref)) {
+    if (checkPref(word, pref) == true) {
       count++;
     }
   });
   return count;
 };
+function checkPref(word, pref) {
+  let wordList = word.split("");
+  let prefList = pref.split("");
+  for (let i = 0; i < prefList.length; i++) {
+    if (!wordList.includes(prefList[i]) || wordList[i] != prefList[i]) {
+      return false;
+    }
+  }
+  return true;
+}
