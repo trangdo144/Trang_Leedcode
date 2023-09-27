@@ -1,4 +1,5 @@
-var findErrorNums = function (nums) {
+//leetcode.com/problems/set-mismatch/
+https: var findErrorNums = function (nums) {
   let map = new Map();
   let arr = [];
   for (let i = 0; i < nums.length; i++) {
