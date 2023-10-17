@@ -14,6 +14,7 @@ var targetIndices = function (nums, target) {
       countLess++;
     }
   }
+
   let result = [];
   for (let i = 0; i < countEqual; i++) {
     result.push(countLess + i);
