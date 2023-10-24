@@ -1,4 +1,5 @@
-var findPeakElement = function (nums) {
+//leetcode.com/problems/find-peak-element/
+https: var findPeakElement = function (nums) {
   let left = 0;
   let right = nums.length - 1;
 
@@ -18,7 +19,7 @@ var findPeakElement = function (nums) {
       left = mid;
     }
     if (nums[mid] > nums[mid - 1] && nums[mid] > nums[mid + 1]) {
-      left = mid;
+      return mid;
     }
   }
   return left;
